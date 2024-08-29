@@ -1,0 +1,304 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #e05711;
+}
+body {
+  background-color: #1f1f1f;
+  margin: 0;
+  font-family: "Amaranth", sans-serif;
+  color: white;
+}
+.logo {
+  text-align: center;
+  padding: 20px;
+  /* margin: 0 0 50px; */
+  background-color: white;
+  img {
+    width: 300px;
+  }
+}
+.category {
+  margin: 30px 0;
+}
+.category ul {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.category ul a {
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 40px;
+  list-style: none;
+  color: var(--primary-color);
+  font-size: 20px;
+  transition: 0.3s;
+}
+.category ul a:hover {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 22px;
+}
+.category ul .active {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 22px;
+}
+.disabled-inputs {
+  opacity: 0.5;
+  pointer-events: none;
+}
+/* h2 {
+  font-weight: 500;
+} */
+
+.guess-game {
+  text-align: center;
+  /* width: 1000px;
+  margin: 20px auto; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+  .game-area {
+    border: 2px solid var(--primary-color);
+    padding: 20px;
+    border-radius: 8px;
+    .inputs {
+      > div {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+          font-size: 30px;
+          margin-right: 15px;
+          font-weight: 500;
+          margin-left: 14px;
+        }
+      }
+      .disabled-inputs {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      input {
+        margin: 0 5px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 30px;
+        caret-color: var(--primary-color);
+        background-color: white;
+        border: none;
+        border-bottom: 3px solid var(--primary-color);
+        border-radius: 5px;
+        font-weight: bold;
+        color: #ff5600;
+        &:focus {
+          outline-color: var(--primary-color);
+        }
+        &.yes-in-place {
+          background-color: #18ba89;
+          border: #18ba89;
+          color: white;
+        }
+        &.not-in-place {
+          background-color: #f89e13;
+          border: #f89e13;
+          color: white;
+        }
+        &.no {
+          background-color: red;
+          border: red;
+          color: white;
+        }
+      }
+    }
+    .control {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 500px;
+      margin: 30px auto;
+      gap: 10px;
+      button {
+        border: none;
+        font-size: 25px;
+        padding: 15px 20px;
+        border-radius: 6px;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      button:disabled {
+        background-color: black;
+        opacity: 0.4;
+        cursor: no-drop;
+      }
+      .check {
+        font-family: "Amaranth", sans-serif;
+        background-color: var(--primary-color);
+        flex: 1;
+      }
+      .check:hover {
+        background-color: #b94409;
+      }
+      .hint {
+        font-family: "Amaranth", sans-serif;
+        background-color: #009688;
+        width: fit-content;
+      }
+      .hint:hover {
+        background-color: #026d62;
+      }
+    }
+  }
+  .key-colors {
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 8px;
+    .key-color {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: white;
+      color: #1f1f1f;
+      .key {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        border-radius: 4px;
+        &.in-place {
+          background-color: #18ba89;
+        }
+        &.not-in-place {
+          background-color: #f89e13;
+        }
+        &.no {
+          background-color: red;
+        }
+      }
+      .key-text {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+/*  */
+
+.result {
+  position: absolute;
+  top: 113px;
+  width: 100%;
+  height: calc(100% - 173px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.result::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000cc;
+  z-index: 1;
+}
+.result .info {
+  background-color: white;
+  z-index: 2;
+  padding: 30px 40px 30px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.result .info img {
+  position: relative;
+  z-index: 2;
+  width: 400px;
+}
+.result .info p {
+  position: relative;
+  z-index: 2;
+  font-size: 35px;
+  color: #1f1f1f;
+  margin-top: 0;
+}
+.result .info p span {
+  font-weight: bold;
+  color: #18ba89;
+  text-transform: uppercase;
+}
+.result .info a {
+  position: relative;
+  z-index: 2;
+  color: #1f1f1f;
+  text-decoration: none;
+  font-size: 25px;
+  border: 5px solid var(--primary-color);
+  padding: 8px 20px 9px;
+  border-radius: 20px;
+  transition: 0.3s;
+  display: block;
+  width: fit-content;
+}
+.result .info a:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+#win-game {
+  display: none;
+}
+#lose-game {
+  display: none;
+}
+
+/*  */
+footer {
+  font-family: "Amaranth", sans-serif;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  background-color: black;
+}
+
+.rotate-center {
+  -webkit-animation: rotate-center 0.6s ease-in-out both;
+  animation: rotate-center 0.6s ease-in-out both;
+}
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

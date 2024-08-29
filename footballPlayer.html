@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shedle</title>
+    <link rel="stylesheet" href="CSS/shedle.css" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="logo">
+      <img src="media/logo.svg" alt="" />
+    </div>
+    <div class="category">
+      <ul>
+        <a href="index.html">Valorant</a>
+        <a href="lol.html">League Of Legends</a>
+        <a href="#" class="active">Football Players</a>
+        <a href="countries.html">Countries</a>
+      </ul>
+    </div>
+    <div class="guess-game">
+      <div class="game-area">
+        <div class="inputs"></div>
+        <div class="control">
+          <button class="check">Check word</button>
+          <button class="hint"><span></span> Hints</button>
+        </div>
+      </div>
+      <div class="key-colors">
+        <h2>Key Colors</h2>
+        <div class="key-color">
+          <div class="key in-place"></div>
+          <div class="key-text">Letter Is Correct</div>
+        </div>
+        <div class="key-color">
+          <div class="key not-in-place"></div>
+          <div class="key-text">Letter Is Correct But In The Wrong Spot</div>
+        </div>
+        <div class="key-color">
+          <div class="key no"></div>
+          <div class="key-text">Letter Is Wrong</div>
+        </div>
+      </div>
+    </div>
+    <div id="win-game" class="result">
+      <div class="info rotate-center">
+        <img src="media/cool-good.gif" alt="" />
+        <div>
+          <p>Good Job</p>
+          <p>The Answer is <span id="the-answer"></span></p>
+          <a href="">Play Again</a>
+        </div>
+      </div>
+    </div>
+    <div id="lose-game" class="result">
+      <div class="info rotate-center">
+        <img src="media/monkey-laugh.gif" alt="" />
+        <div>
+          <p>NOOB...</p>
+          <p>The Answer is <span id="the-answer2"></span></p>
+          <a href="">Play Again</a>
+        </div>
+      </div>
+    </div>
+    <footer>Shedle Created By Shedaaa</footer>
+    <script src="JavaScript/footballPlayer.js"></script>
+    <script src="JavaScript/shedle.js"></script>
+  </body>
+</html>
