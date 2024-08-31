@@ -14,7 +14,7 @@ const words = [
   "skye",
   "yoru",
   "astra",
-  "kay/o",
+  "kayo",
   "chamber",
   "neon",
   "fade",
